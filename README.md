@@ -62,7 +62,7 @@ LIMIT 1;
 ```
 
 ### 2. Intermediate Business Logic
-*Focus: Multi-table Joins and Grouped Analysis.
+*Focus: Multi-table Joins and Grouped Analysis.*
 
 ```sql
 -- Calculate total sales revenue per product category
@@ -92,4 +92,62 @@ JOIN sales s ON g.GeoID = s.GeoID
 GROUP BY g.Region;
 ```
 
+### 3. Advanced Analytical Solutions
+*Focus: Window Functions, CTEs, and Complex Subqueries*
+
+### Salesperson Performance Ranking (Window Functions)
+```sql
+SELECT 
+    p.Salesperson, 
+    p.Team, 
+    SUM(s.Amount) AS total_sales,
+    RANK() OVER (PARTITION BY p.Team ORDER BY SUM(s.Amount) DESC) AS team_rank
+FROM people p
+JOIN sales s ON p.SPID = s.SPID
+GROUP BY p.Team, p.Salesperson;
+```
+
+### Profitability Analysis (CTEs)
+```sql
+WITH profit_calc AS (
+    SELECT s.*, pd.Cost_per_box,
+    (s.Amount - (pd.Cost_per_box * s.Boxes)) AS profit
+    FROM sales s
+    JOIN products pd ON s.PID = pd.PID
+)
+SELECT 
+    pd.Product, 
+    ROUND(SUM(pc.profit), 0) AS total_profit
+FROM products pd
+JOIN profit_calc pc ON pd.PID = pc.PID
+GROUP BY pd.Product
+ORDER BY total_profit DESC;
+```
+
+### Regional Market Leaders (Top 3 Products per Region)
+```sql
+WITH RegionProductSale AS (
+    SELECT g.Region, pd.Product, SUM(s.Boxes) AS total_boxes
+    FROM sales s
+    JOIN geo g ON s.GeoID = g.GeoID
+    JOIN products pd ON pd.PID = s.PID
+    GROUP BY g.Region, pd.Product
+),
+RegionProductRank AS (
+    SELECT *,
+    RANK() OVER(PARTITION BY Region ORDER BY total_boxes DESC) AS Region_Rank
+    FROM RegionProductSale
+)
+SELECT * FROM RegionProductRank WHERE Region_Rank <= 3;
+```
+
+---
+
+## 💡 Conclusion & Recommendations
+
+* **🌎 Regional Expansion:** Given the significant success in the **APAC** region, the business should conduct a deep-dive analysis into the specific sales strategies used there. Adapting these proven tactics for the **Canada** and **USA** markets could help bridge the current performance gap.
+* **🍫 Product Optimization:** Marketing efforts and inventory priority should remain focused on **"Bars."** As the primary driver of both sales volume and total revenue, this category offers the highest return on investment.
+* **🏆 Performance Tracking:** Implement a structured monthly **"Top Performer"** incentive program. By utilizing the **team-based ranking system** (developed in SQL Query #16), management can foster healthy competition and data-driven recognition across all sales teams.
+
+---
 
