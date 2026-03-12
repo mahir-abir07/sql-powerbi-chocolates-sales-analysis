@@ -17,7 +17,7 @@ The interactive Power BI dashboard provides a snapshot of the **$43.6M** in tota
 
 ![Awesome Chocolates Dashboard](image_023377.png)
 
-> 🔗 **[Click Here to View the Interactive Dashboard]([PASTE_YOUR_POWER_BI_LINK_HERE](https://app.powerbi.com/view?r=eyJrIjoiZDQyZmUxNTgtNDRiNC00YmUwLTgyNjAtNTMyYTk2MTIzNzhiIiwidCI6IjExMzdlMDUyLWRiNjktNDMyMS04YWRjLWViNzgwNGRiMjVmNCIsImMiOjEwfQ%3D%3D))**
+> 🔗 **[Click Here to View the Interactive Dashboard]([https://app.powerbi.com/view?r=eyJrIjoiZDQyZmUxNTgtNDRiNC00YmUwLTgyNjAtNTMyYTk2MTIzNzhiIiwidCI6IjExMzdlMDUyLWRiNjktNDMyMS04YWRjLWViNzgwNGRiMjVmNCIsImMiOjEwfQ%3D%3D])**
 
 ### **Key Business Insights:**
 * **Regional Performance:** The **APAC** region is the primary revenue driver, accounting for over **50.5%** of global sales.
