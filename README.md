@@ -59,6 +59,37 @@ SELECT Product, Cost_per_box
 FROM products
 ORDER BY Cost_per_box DESC
 LIMIT 1;                     
+```
 
 ### 2. Intermediate Business Logic
 *Focus: Multi-table Joins and Grouped Analysis.
+
+```sql
+-- Calculate total sales revenue per product category
+SELECT 
+    p.Category, 
+    SUM(s.Amount) AS total_sales
+FROM sales s
+JOIN products p ON s.PID = p.PID
+GROUP BY p.Category;
+
+-- Identify the top 3 salespeople by customer reach
+SELECT 
+    p.Salesperson, 
+    SUM(s.Customers) AS total_customers
+FROM sales s
+JOIN people p ON s.SPID = p.SPID
+GROUP BY p.Salesperson
+ORDER BY total_customers DESC
+LIMIT 3;
+
+-- Analysis of average shipment size by Geographic Region
+SELECT 
+    g.Region, 
+    AVG(s.boxes) AS Avg_Boxes_Per_Sale
+FROM geo g
+JOIN sales s ON g.GeoID = s.GeoID
+GROUP BY g.Region;
+```
+
+
