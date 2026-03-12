@@ -17,7 +17,7 @@ The interactive Power BI dashboard provides a snapshot of the **$43.6M** in tota
 
 ![Awesome Chocolates Dashboard](image_023377.png)
 
-> 🔗 **[Click Here to View the Interactive Dashboard](PASTE_YOUR_POWER_BI_LINK_HERE)**
+> 🔗 **[Click Here to View the Interactive Dashboard]([PASTE_YOUR_POWER_BI_LINK_HERE](https://app.powerbi.com/view?r=eyJrIjoiZDQyZmUxNTgtNDRiNC00YmUwLTgyNjAtNTMyYTk2MTIzNzhiIiwidCI6IjExMzdlMDUyLWRiNjktNDMyMS04YWRjLWViNzgwNGRiMjVmNCIsImMiOjEwfQ%3D%3D))**
 
 ### **Key Business Insights:**
 * **Regional Performance:** The **APAC** region is the primary revenue driver, accounting for over **50.5%** of global sales.
@@ -147,7 +147,7 @@ SELECT * FROM RegionProductRank WHERE Region_Rank <= 3;
 
 * **🌎 Regional Expansion:** Given the significant success in the **APAC** region, the business should conduct a deep-dive analysis into the specific sales strategies used there. Adapting these proven tactics for the **Canada** and **USA** markets could help bridge the current performance gap.
 * **🍫 Product Optimization:** Marketing efforts and inventory priority should remain focused on **"Bars."** As the primary driver of both sales volume and total revenue, this category offers the highest return on investment.
-* **🏆 Performance Tracking:** Implement a structured monthly **"Top Performer"** incentive program. By utilizing the **team-based ranking system** (developed in SQL Query #16), management can foster healthy competition and data-driven recognition across all sales teams.
+* **🏆 Performance Tracking:** Implement a structured monthly **"Top Performer"** incentive program. By utilizing the **team-based ranking system**, management can foster healthy competition and data-driven recognition across all sales teams.
 
 ---
 
