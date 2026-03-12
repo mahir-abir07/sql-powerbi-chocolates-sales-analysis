@@ -58,4 +58,7 @@ FROM sales;
 SELECT Product, Cost_per_box
 FROM products
 ORDER BY Cost_per_box DESC
-LIMIT 1;
+LIMIT 1;                     
+
+### 2. Intermediate Business Logic
+*Focus: Multi-table Joins and Grouped Analysis.
